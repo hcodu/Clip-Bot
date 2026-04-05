@@ -1,0 +1,18 @@
+# TikTok session — sensitive
+  cookies/
+
+  # Video files
+  *.mp4
+  *.mkv
+  *.avi
+  *.mov
+  queue/
+  temp/
+  input/
+  logs/
+
+  # Python
+  __pycache__/
+  *.pyc
+  .venv/
+  EOF
