@@ -1,0 +1,50 @@
+paths:
+  temp_dir: "./temp"
+  queue_dir: "./queue"
+  log_file: "./logs/clip_bot.log"
+  cookies_file: "./cookies/tiktok_state.json"
+
+scene_detection:
+  detector: "content"       # "content" | "threshold" | "adaptive"
+  threshold: 27.0           # lower = more cuts (try 15-20 for action, 35-40 for drama)
+  min_clip_duration: 30.0   # seconds
+  max_clip_duration: 60.0   # seconds
+
+crop:
+  target_width: 1080
+  target_height: 1920
+
+transcription:
+  model_size: "base"        # tiny | base | small | medium | large
+  language: null            # null = auto-detect, or e.g. "en"
+  device: "auto"            # auto | cpu | cuda
+  extract_audio_first: true # pre-extract to WAV before Whisper (recommended)
+
+tts:
+  enabled: true
+  model_name: "tts_models/en/ljspeech/tacotron2-DDC"
+  speaker_wav: null         # path to reference .wav for XTTS voice cloning
+  language: "en"
+  gpu: false
+  agree_to_tos: true        # required for XTTS v2
+
+audio_mix:
+  tts_volume: 0.25          # TTS track volume (0.0–1.0)
+  original_volume: 1.0      # original audio track volume
+  tts_start_offset: 0.5     # seconds before TTS begins
+  output_codec: "aac"
+  output_bitrate: "192k"
+
+upload:
+  headless: false           # always false for TikTok (headless is fingerprinted)
+  delay_between_uploads: 30.0
+  max_retries: 2
+  default_hashtags:
+    - "#fyp"
+    - "#tvshow"
+  title_max_length: 100
+
+logging:
+  level: "INFO"             # DEBUG | INFO | WARNING | ERROR
+  console: true
+  file: true

@@ -1,0 +1,30 @@
+# Core video/audio processing
+ffmpeg-python==0.2.0
+
+# Scene detection
+scenedetect[opencv]==0.6.4
+
+# Transcription
+openai-whisper==20231117
+torch>=2.0.0
+torchaudio>=2.0.0
+
+# TTS (Coqui)
+TTS==0.22.0
+numpy<2.0
+
+# Browser automation
+playwright==1.44.0
+
+# Config and utilities
+PyYAML==6.0.1
+tqdm==4.66.4
+
+# NOTE: Install system FFmpeg separately:
+#   Windows: winget install ffmpeg
+#
+# NOTE: After pip install, run:
+#   playwright install chromium
+#
+# NOTE: For GPU support (optional):
+#   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
